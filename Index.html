@@ -1,3 +1,439 @@
 <!DOCTYPE html>
 <html lang="es">
-<h1>Hola</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La importancia de los videojuegos en la actualidad</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 22px;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-futurista-degradado-esferas_23-2149110136.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            min-height: 100vh;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .content-box {
+            background-color: rgba(220, 220, 220, 0.85);
+            border: 3px solid #888;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            padding: 25px;
+        }
+
+        header {
+            background: linear-gradient(45deg, pink, purple, blue, red);
+            color: white;
+            padding: 25px;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: 32pt;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            margin: 0;
+        }
+
+        nav {
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 15px;
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 20px;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            margin: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        nav button:hover {
+            background-color: #3e8e41;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        section {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        img {
+            max-width: 80%;
+            height: auto;
+            margin: 25px auto;
+            display: block;
+            border: 3px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .story {
+            background-color: rgba(249, 249, 249, 0.95);
+            padding: 25px;
+            margin: 25px auto;
+            border-radius: 12px;
+            max-width: 850px;
+            text-align: left;
+            border-left: 6px solid #4CAF50;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .story h3 {
+            color: #2e7d32;
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: rgba(51, 51, 51, 0.9);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        h2, h3 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        ul, ol {
+            text-align: left;
+            max-width: 800px;
+            margin: 25px auto;
+            padding-left: 40px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #1b5e20;
+            text-decoration: underline;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Efecto de vidrio para mejor legibilidad */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="content-box">
+            <header>
+                <h1>La importancia de los videojuegos en la actualidad</h1>
+            </header>
+
+            <nav>
+                <button onclick="showSection('contenido3')">Parte 1 - ChatGPT</button>
+                <button onclick="showSection('contenido1')">Parte 2 - Deepseek</button>
+                <button onclick="showSection('contenido2')">Parte 3 - Gemini</button>
+            </nav>
+
+            <!-- Sección 1: Contenido Deepseek -->
+            <section id="contenido1" class="active">
+                <h2>La historia de una persona que fue afectada por los videojuegos</h2>
+                <p>Los videojuegos se han convertido en una parte fundamental de la cultura moderna, influyendo en el entretenimiento, la educación y las relaciones sociales.</p>
+                
+                <img src="https://phantom-elmundo.unidadeditorial.es/03a2184e876bed626d5e808f9e057414/resize/600/f/webp/assets/multimedia/imagenes/2020/12/14/16079518712325.jpg" alt="Videojuegos modernos">
+
+                <h3>Ventajas de los videojuegos</h3>
+                <ul>
+                    <li>Mejoran habilidades cognitivas</li>
+                    <li>Fomentan el trabajo en equipo</li>
+                    <li>Pueden ser herramientas educativas</li>
+                    <li>Ayudan a desarrollar habilidades motoras</li>
+                    <li>Promueven la creatividad</li>
+                </ul>
+
+                <h3>Desventajas de los videojuegos</h3>
+                <ul>
+                    <li>Riesgo de adicción</li>
+                    <li>Pueden afectar la salud física</li>
+                    <li>Posible aislamiento social</li>
+                    <li>Contenido violento inapropiado</li>
+                    <li>Pérdida de tiempo excesiva</li>
+                </ul>
+
+                <div class="story">
+                    <h3>Historia positiva: Cómo los videojuegos ayudaron a María</h3>
+                    <p>María, una joven con ansiedad social, encontró en los videojuegos multijugador una forma segura de interactuar con otros. A través del juego, desarrolló habilidades sociales que luego pudo trasladar a su vida real. Hoy estudia diseño de videojuegos y ha encontrado un grupo de amigos cercanos gracias a esta pasión compartida.</p>
+                </div>
+
+                <div class="story">
+                    <h3>Historia negativa: Cuando los videojuegos se convirtieron en un problema para Juan</h3>
+                    <p>Juan comenzó a jugar videojuegos como forma de escape durante una época difícil en la escuela. Lo que empezó como unas horas a la semana se convirtió en una adicción que afectó su rendimiento académico y sus relaciones familiares. Después de reconocer el problema, buscó ayuda profesional y logró establecer un equilibrio saludable entre el juego y otras actividades.</p>
+                </div>
+                
+                <h2>Referencias</h2>
+                <p>Información obtenida de las siguientes fuentes:</p>
+                
+                <ul>
+                    <li>American Psychological Association. (2020). <i>Los beneficios cognitivos de jugar videojuegos</i>. Recuperado de <a href="https://www.apa.org" target="_blank">https://www.apa.org</a></li>
+                    <li>Entertainment Software Association. (2023). <i>Reporte anual de la industria de videojuegos</i>. Recuperado de <a href="https://www.theesa.com" target="_blank">https://www.theesa.com</a></li>
+                    <li>Gee, J. P. (2007). <i>What video games have to teach us about learning and literacy</i>. Palgrave Macmillan.</li>
+                    <li>World Health Organization. (2018). <i>Gaming disorder</i>. Recuperado de <a href="https://www.who.int" target="_blank">https://www.who.int</a></li>
+                    <li>Newzoo. (2023). <i>Global Games Market Report</i>. Recuperado de <a href="https://newzoo.com" target="_blank">https://newzoo.com</a></li>
+                </ul>
+            </section>
+
+            <section id="contenido2">
+
+                <h1><b>La Influencia de los Videojuegos</b></h1>
+                <div class="image-container">
+                    <img src="https://almacengamertv.com/wp-content/uploads/videojuego-moderno.jpg" width="700" height="400" alt="Videojuegos Modernos">
+                </div>
+                <h3>Ventajas y Desventajas de los Videojuegos en la Actualidad</h3>
+                    
+                    <p><b> Introducción:</b></p>
+            <p> Los videojuegos han experimentado una transformación notable a lo largo de las últimas décadas, pasando de ser considerados meros pasatiempos a constituir una forma de entretenimiento dominante y una industria de gran magnitud económica.</p>
+            <p>1 Su accesibilidad se ha expandido considerablemente gracias a la proliferación de consolas especializadas, ordenadores personales, dispositivos móviles inteligentes y la creciente inmersión proporcionada por la tecnología de realidad virtual (RV).Esta amplia disponibilidad ha contribuido a su adopción por individuos de todas las edades, aunque con una particular prevalencia entre niños y adolescentes. La inversión de tiempo dedicada a los videojuegos es considerable, con estudios que indican que los niños pueden llegar a pasar una parte significativa de su jornada diaria interactuando con ellos. Esta omnipresencia de los videojuegos en la vida moderna sugiere que su impacto trasciende la esfera del simple entretenimiento, pudiendo influir en diversos aspectos del desarrollo humano y el funcionamiento social. Por lo tanto, resulta fundamental llevar a cabo un análisis riguroso y basado en la evidencia científica para comprender la naturaleza multifacética de esta influencia. El presente informe tiene como objetivo examinar de manera objetiva y exhaustiva tanto los beneficios potenciales como los riesgos asociados con la participación en videojuegos en el contexto actual. Se recurrirá a estudios científicos recientes e informes de organizaciones relevantes para fundamentar las afirmaciones presentadas, buscando ofrecer una perspectiva equilibrada y fundamentada en la investigación actual sobre los impactos de los videojuegos en la sociedad contemporánea. Dada la naturaleza a menudo polarizada del debate en torno a los videojuegos, un análisis detallado que considere ambas perspectivas (ventajas y desventajas) y se apoye en evidencia empírica se considera esencial para alcanzar una comprensión matizada y objetiva del tema.</p>
+                <p><b>II. Ventajas de los Videojuegos:</b></p>
+            
+            <li>A. Beneficios Cognitivos</li>
+                
+                <p>Los videojuegos, especialmente aquellos que requieren el uso de controladores, pueden contribuir al refinamiento de la motricidad fina y la coordinación mano-ojo.2 Un estudio realizado con cirujanos reveló que aquellos que eran jugadores habituales de videojuegos demostraron una mayor velocidad y precisión en la ejecución de procedimientos quirúrgicos complejos.2 Este hallazgo sugiere una posible aplicación del entrenamiento a través de videojuegos como una estrategia complementaria en la rehabilitación física y en el desarrollo de habilidades motoras finas en diversos campos profesionales que exigen un alto grado de precisión manual. Además, se han desarrollado videojuegos específicos que se emplean como herramientas terapéuticas para asistir a pacientes con daño neurológico, como las víctimas de accidentes cerebrovasculares, en el proceso de recuperación de la funcionalidad de sus manos y muñecas.2
+                    La participación regular en videojuegos se ha asociado con un incremento en el volumen de materia gris en regiones cerebrales clave y una mejora en la conectividad funcional entre diferentes áreas del cerebro.2 La materia gris desempeña un papel fundamental en una variedad de funciones cognitivas, incluyendo el control muscular, la memoria, la percepción espacial y la navegación.2 Un estudio llevado a cabo en 2015 comparó a jugadores expertos en videojuegos de acción con jugadores novatos, revelando que los jugadores expertos presentaban un mayor volumen de materia gris y una conectividad funcional más robusta en comparación con el grupo de control.5 Estos resultados apuntan hacia la neuroplasticidad inducida por la práctica de videojuegos, lo que podría tener implicaciones significativas para el desarrollo cognitivo a lo largo de la vida y en la prevención del deterioro neurológico asociado al envejecimiento.
+                    Investigaciones han indicado que los niños que dedican una mayor cantidad de tiempo a la práctica de videojuegos tienden a desarrollar mejores habilidades sociales, posiblemente debido a los elementos colaborativos y sociales que se encuentran presentes en ciertos tipos de juegos.2 Estos niños también mostraron un mejor rendimiento académico y la formación de relaciones interpersonales más sólidas.2 La naturaleza multijugador de muchos videojuegos facilita la interacción social, ya sea con amigos conocidos o con otros jugadores en línea.1 Estos entornos virtuales pueden resultar particularmente beneficiosos para niños con trastorno del espectro autista (TEA), al proporcionar un espacio para la interacción social relajada que minimiza las complejidades de las señales sociales no verbales, que a menudo resultan difíciles de interpretar para ellos.1 La participación en juegos multijugador fomenta el desarrollo del trabajo en equipo y la comunicación efectiva entre los jugadores.1 Un estudio centrado en los juegos multijugador masivos en línea (MMOs) encontró una correlación positiva entre el compromiso con estos juegos y un mayor sentido de identidad social, lo que a su vez se asoció con una mayor autoestima y competencia social, así como con una disminución en los niveles de soledad experimentados por los jugadores.5 Encuestas realizadas a jugadores a nivel global revelan que una proporción considerable ha logrado formar nuevas amistades e incluso iniciar relaciones románticas a través de las plataformas de videojuegos.3 Estos hallazgos desafían la imagen estereotipada del jugador aislado y sugieren que los videojuegos pueden constituir una plataforma importante para la conexión social y el desarrollo de habilidades interpersonales en el mundo digital contemporáneo.
+                    Muchos videojuegos, especialmente aquellos que se caracterizan por su mundo abierto, la estructura basada en misiones o la presencia de múltiples niveles, están intrínsecamente estructurados como complejos desafíos que requieren de planificación, análisis y una toma de decisiones estratégicas por parte del jugador.2 Un estudio longitudinal llevado a cabo en 2013 demostró que los niños que participaban en juegos de estrategia mostraban mejoras significativas en sus habilidades para la resolución de problemas, lo que a su vez se tradujo en un mejor rendimiento académico general.2 La necesidad de pensar con rapidez y de elaborar estrategias efectivas en entornos virtuales dinámicos puede tener una transferencia positiva a situaciones que se presentan en el mundo real.2 Encuestas recientes indican que una proporción considerable de adolescentes perciben que su participación en videojuegos ha fortalecido sus habilidades para la resolución de problemas.5 Incluso los videojuegos que no se clasifican tradicionalmente como juegos de estrategia pueden fomentar el desarrollo del pensamiento crítico al presentar a los jugadores con obstáculos que requieren soluciones creativas y rápidas para poder ser superados.1 La naturaleza inherentemente desafiante de muchos videojuegos los convierte en herramientas efectivas para el entrenamiento cognitivo en áreas como la resolución de problemas y el pensamiento estratégico, con posibles beneficios tangibles tanto en el ámbito académico como en el profesional.
+                    Contrariamente a la creencia popular, la práctica de videojuegos, siempre y cuando se realice con moderación en cuanto a la duración y la distancia de la pantalla, podría tener efectos positivos en la agudeza visual.2 Un estudio reveló que individuos que fueron entrenados en juegos de acción en primera persona mostraron una mayor capacidad para discernir objetos en entornos visualmente complejos, gracias a una mejora en la resolución espacial de su visión.2 Este hallazgo sugiere que ciertos tipos de videojuegos podrían ser utilizados en programas de entrenamiento visual para mejorar habilidades específicas de percepción visual.
+                    Investigaciones recientes han demostrado que los niños que juegan videojuegos durante un tiempo razonable a la semana (alrededor de 21 horas) obtienen mejores resultados en tareas cognitivas relacionadas con la memoria y la inhibición de respuestas en comparación con aquellos que no participan en esta actividad.5 Un estudio llevado a cabo por el Instituto Nacional de Salud de los Estados Unidos (NIH) encontró que los niños que jugaban videojuegos durante tres o más horas al día mostraban un mejor rendimiento en pruebas diseñadas para evaluar el control de impulsos y la memoria de trabajo.15 Estos resultados indican que la participación en videojuegos podría tener un impacto positivo en aspectos específicos de la función cognitiva en niños, lo que podría explorarse con mayor profundidad en contextos educativos.
+                    Diversos estudios han establecido una asociación entre la experiencia de jugar videojuegos y una mejora en varias funciones cognitivas fundamentales, incluyendo la atención visual, la memoria a corto plazo, el tiempo de reacción y la memoria de trabajo.16 Una revisión sistemática de estudios de intervención que utilizaron imágenes por resonancia magnética (IRM) reveló que los videojuegos pueden inducir cambios beneficiosos tanto en la estructura como en la función del cerebro.16 La consistencia de estos hallazgos a través de diferentes tipos de estudios (transversales, longitudinales y de intervención) refuerza la idea de que los videojuegos pueden tener efectos positivos significativos en las capacidades cognitivas fundamentales.
+                </p>
+            
+            <li>B. Beneficios para la Salud Mental y Emocional</li>
+            
+            <p> ha observado que algunos videojuegos tienen la capacidad de mejorar el estado de ánimo y regular el ritmo cardíaco, lo que sugiere un potencial para aliviar el estrés.2 La correlación entre el uso de videojuegos y la reducción del estrés ha sido documentada en múltiples investigaciones independientes, lo que ha llevado a su incorporación en terapias durante más de una década.2 Encuestas a jugadores a nivel mundial indican que una parte considerable utiliza los videojuegos como una herramienta para gestionar o mejorar su salud mental y para aliviar el estrés y la ansiedad.6 El uso extendido de videojuegos para el manejo del estrés y la mejora del estado de ánimo sugiere su potencial como una forma de autocuidado y una herramienta complementaria para el bienestar emocional.
+                La mayoría de los jugadores a nivel mundial participan en juegos multijugador en línea de forma regular, lo que facilita la formación de comunidades virtuales y la interacción social a través de fronteras geográficas.6 Muchos jugadores reportan haber hecho nuevos amigos e incluso haber iniciado relaciones significativas a través de los videojuegos.3 Más de la mitad de los jugadores sienten que los videojuegos les han ayudado a superar momentos difíciles, y una proporción aún mayor percibe que los videojuegos contribuyen a la creación de un sentido de comunidad en línea.1 Estos hallazgos resaltan la capacidad de los videojuegos para trascender el mero entretenimiento y proporcionar plataformas para la construcción de relaciones sociales y el apoyo emocional, especialmente para individuos que pueden experimentar aislamiento en el mundo real.
+                Investigaciones han demostrado que los videojuegos pueden ser herramientas terapéuticas eficaces para tratar diversas afecciones de salud mental, incluyendo la ansiedad, la depresión, el trastorno por déficit de atención e hiperactividad (TDAH) y el trastorno de estrés postraumático (TEPT).17 Los videojuegos especialmente diseñados pueden ofrecer beneficios modestos para niños y adolescentes que sufren estas condiciones.17 La naturaleza inmersiva e interactiva de los videojuegos puede aumentar el compromiso de los pacientes con la terapia en comparación con los métodos tradicionales.18 Los médicos incluso han comenzado a recomendar videojuegos para niños con cáncer para mejorar su bienestar mental.1 La Administración de Alimentos y Medicamentos de EE. UU. (FDA) ha aprobado el uso de un videojuego como tratamiento digital de prescripción para el TDAH, lo que subraya el creciente reconocimiento de su potencial terapéutico.19 La creciente adopción de videojuegos en el ámbito terapéutico, respaldada por la investigación y la aprobación regulatoria, sugiere un cambio de paradigma en el tratamiento de la salud mental, reconociendo el valor de las intervenciones digitales gamificadas.
+                Estudios recientes de UNICEF y NYU han revelado que los videojuegos bien diseñados pueden contribuir al bienestar de los niños al fomentar su sentido de autonomía, competencia, creatividad e identidad.24 Estos juegos pueden permitir a los niños experimentar un sentido de control, tener libertad de elección y desarrollar sentimientos de logro.24 Además, pueden estimular la imaginación, la expresión personal y la regulación emocional, así como fortalecer las relaciones sociales.24 Para lograr estos beneficios, los juegos deben incorporar características específicas que respondan a las necesidades e intereses de los niños, como la posibilidad de tomar decisiones, desarrollar estrategias propias y explorar libremente.24 Estos hallazgos resaltan el potencial de los videojuegos como herramientas para el desarrollo psicológico positivo en la infancia, siempre que se diseñen cuidadosamente teniendo en cuenta las necesidades de los niños.
+                Encuestas a jugadores a nivel mundial indican que una proporción significativa ha recurrido a los videojuegos como una forma de sobrellevar períodos difíciles en sus vidas.6 En particular, en los Estados Unidos, más de la mitad de los encuestados informaron que los videojuegos les ayudaron a sentirse menos aislados o solos al facilitar la conexión con otros.6 Esto sugiere que los videojuegos pueden actuar como una fuente de apoyo emocional y conexión social, especialmente en momentos de estrés o aislamiento.</p> 
+            </p>
+            <h2><b>Desventajas de los videojuegos</b></h2>
+            
+            A. Impacto Negativo en la Salud Física
+            El juego excesivo se ha asociado con la inactividad física, lo que a su vez aumenta el riesgo de obesidad.4 La mayoría de los videojuegos se juegan en posición sedentaria, lo que contribuye a un estilo de vida poco saludable si no se equilibra con actividad física regular.26 Estudios han vinculado el juego prolongado con el desarrollo de obesidad en niños y adolescentes.27 La falta de actividad física debido al juego excesivo puede tener consecuencias negativas para la salud a largo plazo, incluyendo un mayor riesgo de enfermedades cardiovasculares, diabetes y otros problemas relacionados con el estilo de vida.
+            La exposición prolongada a las pantallas de los videojuegos puede causar fatiga visual, caracterizada por sequedad, irritación y visión borrosa.4 Además, mantener posturas inadecuadas durante largas sesiones de juego puede contribuir a problemas de espalda, cuello y hombros.4 Estos efectos físicos pueden disminuir la calidad de vida y requerir atención médica si se vuelven crónicos.
+            Los movimientos repetitivos de manos y dedos al usar controladores y ratones pueden provocar lesiones por esfuerzo repetitivo, como el síndrome del túnel carpiano, tendinitis y otras afecciones musculoesqueléticas.28 Se han documentado casos de dolor en muñecas, cuello, codos y manos asociados al uso prolongado de videojuegos.28 Estas lesiones pueden afectar la capacidad de realizar actividades diarias y laborales, y en algunos casos pueden requerir tratamiento médico y fisioterapia.
+            
+            
+            B. Riesgos para la Salud Mental y el Comportamiento
+            Las plataformas de videojuegos en línea pueden exponer a los jugadores, especialmente a niños y adolescentes, a situaciones de ciberacoso, intimidación y comportamiento tóxico por parte de otros usuarios.4 El anonimato en línea puede facilitar estas conductas negativas sin consecuencias aparentes en el mundo real para los agresores.4 Los videojuegos violentos también pueden contener elementos de racismo, homofobia y misoginia.31 Encuestas indican que una proporción significativa de adolescentes que juegan videojuegos han experimentado acoso o han sido llamados con nombres ofensivos mientras jugaban en línea.31 La exposición a este tipo de contenido y comportamiento puede tener efectos perjudiciales en la salud mental y el bienestar emocional de los jugadores, generando ansiedad, baja autoestima y aislamiento.
+            Estudios han relacionado el juego excesivo, particularmente de videojuegos con contenido violento, con un mayor riesgo de desarrollar ansiedad, trastornos del estado de ánimo y dificultades en las interacciones sociales.4 Los niños y adolescentes que pasan demasiado tiempo inmersos en mundos virtuales pueden experimentar dificultades para adaptarse y desenvolverse en situaciones sociales del mundo real.4 El uso problemático de videojuegos también se ha asociado con depresión y otros problemas de salud mental.29 El desequilibrio entre el tiempo dedicado a los videojuegos y otras actividades importantes para el desarrollo social y emocional puede tener consecuencias negativas para la salud mental a largo plazo.
+            Existe una preocupación constante sobre la posible relación entre los videojuegos violentos y el aumento de la agresividad, especialmente en niños y adolescentes.4 La Asociación Americana de Psicología (APA) ha encontrado una correlación consistente entre el juego de videojuegos violentos y resultados agresivos, como gritar y empujar.31 Un estudio de 2018 sugirió que los niños que jugaban videojuegos violentos tendían a manifestar comportamientos más agresivos.36 Aunque el debate sobre si los videojuegos violentos causan violencia en el mundo real continúa, la evidencia sugiere una conexión entre la exposición a la violencia virtual y un aumento en los pensamientos y comportamientos agresivos en algunos individuos.
+            La Organización Mundial de la Salud (OMS) reconoció la adicción a los videojuegos como un trastorno de salud mental en 2018, clasificándolo como "Trastorno de Juego" en la Clasificación Internacional de Enfermedades (CIE-11).31 Este trastorno se caracteriza por la pérdida de control sobre el juego, la prioridad creciente que se le da al juego sobre otras actividades y la continuación del juego a pesar de las consecuencias negativas.37 La Asociación Americana de Psiquiatría (APA) también ha incluido el "Trastorno de Juego en Internet" como una condición que requiere más estudio en su Manual Diagnóstico y Estadístico de los Trastornos Mentales (DSM-5).42 Se estima que un porcentaje de la población jugadora podría desarrollar comportamientos adictivos.30 El reconocimiento formal de la adicción a los videojuegos como un trastorno subraya la seriedad del problema y la necesidad de desarrollar estrategias de prevención y tratamiento.
+            Los criterios diagnósticos para el Trastorno de Juego incluyen la incapacidad de controlar la necesidad de jugar, la sensación de que el juego es más importante que cualquier otra actividad y la continuación del juego a pesar de las consecuencias negativas en las relaciones, el rendimiento académico o el trabajo.42 Otros síntomas pueden incluir la preocupación excesiva por los juegos, síntomas de abstinencia cuando no se puede jugar, la necesidad de jugar cada vez más tiempo para obtener la misma satisfacción (tolerancia), la pérdida de interés en otras actividades, el engaño a familiares o amigos sobre el tiempo dedicado al juego, la pérdida de oportunidades educativas o laborales debido al juego, el uso del juego como una forma de escapar de problemas o aliviar emociones negativas, la incapacidad de controlar la frecuencia y la duración del juego y la falta de limitación del tiempo de juego a pesar de los problemas psicológicos que esto genera.36 Este trastorno también se ha asociado con depresión, hostilidad, ansiedad social, antojos intensos y una sensación de pérdida de control.33 La variedad y la gravedad de estos síntomas resaltan el impacto significativo que la adicción a los videojuegos puede tener en la vida de una persona, afectando su bienestar físico, mental y social.
+            Se ha sugerido que la exposición repetida a la violencia en los videojuegos podría llevar a una desensibilización emocional hacia la violencia en el mundo real.42 Sin embargo, un estudio de 2017 no encontró evidencia de efectos negativos a largo plazo en la empatía, incluso en usuarios que jugaban videojuegos violentos de forma excesiva.36 Otro estudio del mismo año tampoco halló pruebas de que las respuestas neuronales relacionadas con la empatía se vieran disminuidas en jugadores habituales de videojuegos violentos.49 La investigación sobre los efectos a largo plazo de los videojuegos violentos en la empatía sigue siendo contradictoria, lo que sugiere que la relación entre la exposición a la violencia virtual y la desensibilización en el mundo real es compleja y requiere más investigación para comprenderla completamente.
+            Tabla 2: Síntomas del Trastorno de Juego (Según la CIE-11 de la OMS y el DSM-5 de la APA)
+            
+            Síntoma/CriterioCIE-11 de la OMSDSM-5 de la APAControl deficiente sobre el inicio, frecuencia, intensidad, duración, terminación y contexto del juegoSíSíPrioridad creciente dada al juego sobre otros intereses y actividades diariasSíSíContinuación o escalada del juego a pesar de la ocurrencia de consecuencias negativasSíSíPreocupación con los juegosNoSíSíntomas de abstinencia (irritabilidad, ansiedad) al no poder jugarNoSíNecesidad de jugar cada vez más para obtener la misma satisfacción (tolerancia)NoSíPérdida de interés en otras actividadesNoSíEngaño a otros sobre la cantidad de tiempo dedicado al juegoNoSíUso del juego para escapar o aliviar emociones negativasNoSíIncapacidad de controlar la frecuencia y duración del juegoNoSíContinuar jugando a pesar de los problemas psicológicos que generaNoSí
+            
+            C. Impacto en el Rendimiento Académico y la Vida Social
+            El tiempo excesivo dedicado a los videojuegos a menudo se produce a expensas del tiempo dedicado al estudio y a las responsabilidades académicas, lo que puede resultar en un declive del rendimiento escolar y una disminución de la motivación por el aprendizaje.4 El sistema de recompensas inherente a muchos videojuegos puede generar un ciclo de comportamiento adictivo que dificulta la priorización de las tareas escolares.4 En el ámbito universitario, se ha observado que los estudiantes con trastorno de juego tienden a dedicar más tiempo a los videojuegos que al estudio, lo que afecta negativamente su desempeño académico.58 El atractivo y la naturaleza gratificante de los videojuegos pueden desviar la atención y el tiempo de los estudiantes de sus obligaciones académicas, lo que podría tener consecuencias negativas para su futuro educativo y profesional.
+            La dedicación excesiva a los videojuegos puede limitar la participación en interacciones sociales normales con compañeros y amigos, lo que a su vez puede afectar negativamente el desarrollo de habilidades sociales y la capacidad para mantener relaciones significativas en el mundo real.27 Las personas que desarrollan una adicción a los videojuegos pueden tener dificultades para formar y mantener relaciones fuera del entorno virtual.30 En el caso de individuos con ansiedad social, el refugio en los videojuegos puede reducir aún más sus interacciones en persona, exacerbando su condición.31 El aislamiento social resultante del juego problemático puede tener efectos perjudiciales en el bienestar emocional y la salud mental a largo plazo.
+            Investigaciones han indicado que el tiempo dedicado a jugar videojuegos, especialmente en grandes cantidades, a menudo se produce a expensas de otras actividades importantes y productivas, como el estudio, la realización de tareas escolares y la participación en otras aficiones o intereses.59 Incluso cuando el impacto en las habilidades cognitivas no es significativo, el tiempo dedicado al juego puede desplazar actividades que contribuyen de manera más directa al desarrollo personal y académico. Este desplazamiento de actividades puede generar un desequilibrio en el estilo de vida y limitar las oportunidades de crecimiento y desarrollo en otras áreas importantes.
+            
+            
+            D. Otros Posibles Efectos Negativos
+            Existe un riesgo de desencadenar convulsiones epilépticas en personas que sufren de fotosensibilidad al jugar videojuegos que contienen luces parpadeantes o cambios rápidos de escena.28 En casos aislados, se han reportado efectos adversos como alucinaciones auditivas, enuresis (micción involuntaria), encopresis (defecación involuntaria) y diversos tipos de dolores musculoesqueléticos, aunque estos suelen ser raros y de carácter temporal, resolviéndose generalmente al disminuir o cesar la práctica de videojuegos.28
+            
+            IV. Equilibrando los Beneficios y DesventajasPara aprovechar los beneficios de los videojuegos y minimizar sus posibles desventajas, es crucial fomentar un uso equilibrado y establecer límites claros en cuanto al tiempo dedicado a jugar.4 La moderación es clave para evitar la aparición de problemas relacionados con la salud física, mental y social.4 Se sugiere limitar el tiempo de juego diario y semanal, especialmente en niños y adolescentes.27 Los efectos de los videojuegos pueden variar significativamente según el género y el contenido del juego.16 Algunos tipos de juegos pueden ofrecer mayores beneficios cognitivos o educativos, mientras que otros, especialmente aquellos con contenido violento o inapropiado para la edad, podrían conllevar mayores riesgos.16 Es importante seleccionar juegos que sean apropiados para la edad y que fomenten habilidades positivas.Los padres desempeñan un papel fundamental en la supervisión y orientación del uso de videojuegos por parte de sus hijos, fomentando la moderación, estableciendo límites de tiempo y promoviendo la participación en otras actividades.4 Es importante tener conversaciones abiertas con los niños sobre sus hábitos de juego y los posibles riesgos y beneficios.4 Los jugadores también deben ser conscientes de su propio comportamiento y establecer límites para garantizar un equilibrio saludable entre el juego y otras áreas de sus vidas.34V. ConclusiónLos videojuegos ofrecen una amplia gama de ventajas, incluyendo mejoras en la destreza manual, la función cognitiva, las habilidades sociales, la capacidad de resolución de problemas y potencialmente la salud mental y el aprendizaje. Sin embargo, también presentan desventajas significativas, como el riesgo de inactividad física, problemas de salud mental, adicción y un impacto negativo en el rendimiento académico y la vida social si no se utilizan con moderación.Es esencial adoptar un enfoque informado y equilibrado hacia el uso de videojuegos, reconociendo tanto su potencial positivo como sus posibles riesgos. La clave reside en la moderación, la selección consciente del contenido y el establecimiento de límites claros, especialmente para los niños y adolescentes. Al hacerlo, se pueden maximizar los beneficios de los videojuegos mientras se mitigan sus posibles efectos negativos, promoviendo así una relación saludable y productiva con esta forma de entretenimiento cada vez más prevalente.VI.
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/600x400/ADD8E6/000000?Text=Impacto%20de%20Videojuegos" alt="Impacto de Videojuegos">
+                </div>
+            </section>
+            
+            <script>
+                function showSection(id) {
+                    const sections = document.querySelectorAll("section");
+                    sections.forEach(sec => sec.classList.remove("active"));
+                    document.getElementById(id).classList.add("active");
+                }
+            </script>
+            
+            
+            <section id="contenido3">
+                <header id="inicio">
+                <h1>La importancia de los videojuegos en la actualidad</h1>
+                <nav>
+                    <a href="#inicio">Inicio</a>
+                    <a href="#indice">Índice</a>
+                    <a href="#tema">Tema</a>
+                    <a href="#videojuegos">Videojuegos más importantes</a>
+                    <a href="#referencias">Referencias</a>
+                </nav>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Videojuegos inicio">
+            </header>
+            
+            <section class="contenido" id="indice">
+                <h2>Índice</h2>
+                <ul>
+                    <li><a href="#tema">Influencia de los videojuegos</a></li>
+                    <li><a href="#ventajas">Ventajas y Desventajas</a></li>
+                    <li><a href="#historias">Historias de vida</a></li>
+                    <li><a href="#videojuegos">Videojuegos más importantes</a></li>
+                    <li><a href="#referencias">Referencias</a></li>
+                </ul>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Índice videojuegos">
+            </section>
+            
+            <section class="contenido" id="tema">
+                <h2>Influencia de los Videojuegos</h2>
+                <p>Los videojuegos han dejado de ser simples formas de entretenimiento para convertirse en parte de la cultura moderna. Su impacto se extiende a la educación, la salud mental, la socialización y el desarrollo cognitivo.</p>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Influencia videojuegos">
+            </section>
+            
+            <section class="contenido" id="ventajas">
+                <h2>Ventajas y Desventajas</h2>
+                <h3>Ventajas</h3>
+                <ul>
+                    <li>Mejoran habilidades como la memoria y la estrategia.</li>
+                    <li>Estimulan la coordinación motora y la atención.</li>
+                    <li>Favorecen la interacción social a través de juegos cooperativos.</li>
+                </ul>
+                <h3>Desventajas</h3>
+                <ul>
+                    <li>El uso excesivo puede generar adicción y aislamiento.</li>
+                    <li>Pueden afectar negativamente el rendimiento académico.</li>
+                    <li>Exposición a contenido violento sin supervisión.</li>
+                </ul>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Ventajas y desventajas">
+            </section>
+            
+            <section class="contenido" id="historias">
+                <h2>Historias de Vida</h2>
+                <h3>Una historia positiva</h3>
+                <p>Ana, diagnosticada con ansiedad social, logró integrarse a comunidades de videojuegos donde desarrolló habilidades de comunicación y liderazgo.</p>
+            
+                <h3>Una historia negativa</h3>
+                <p>Julián, estudiante de secundaria, comenzó a descuidar sus estudios por jugar más de 10 horas diarias. Reprobó varias materias y su salud se vio afectada por la falta de sueño.</p>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Historias personales">
+            </section>
+            
+            <section class="contenido" id="videojuegos">
+                <h2>Videojuegos Más Importantes</h2>
+                <ul>
+                    <li>Minecraft</li>
+                    <li>Fortnite</li>
+                    <li>League of Legends</li>
+                    <li>Among Us</li>
+                    <li>Call of Duty</li>
+                </ul>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Videojuegos populares">
+            </section>
+            
+            <section class="contenido" id="referencias">
+                <h2>Referencias</h2>
+                <ul>
+                    <li><a href="https://www.who.int/es/news-room/questions-and-answers/item/video-games-health" target="_blank">Organización Mundial de la Salud</a></li>
+                    <li><a href="https://www.psychologytoday.com/us/blog/reading-between-the-headlines/201904/are-video-games-good-you" target="_blank">Psychology Today</a></li>
+                    <li><a href="https://www.bbc.com/mundo/noticias-50736967" target="_blank">BBC Mundo</a></li>
+                </ul>
+                <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Imagen de referencias">
+            </section>
+            
+            <footer>
+                <p>&copy; 2025 La importancia de los videojuegos en la actualidad</p>
+            </footer>
+            </section>
+            
+            
+            <script>
+                function showSection(id) {
+                    const sections = document.querySelectorAll("section");
+                    sections.forEach(sec => sec.classList.remove("active"));
+                    document.getElementById(id).classList.add("active");
+                }
+            </script>
+            </body>
+            </html>
+            
+
+    <script>
+        function showSection(id) {
+            const sections = document.querySelectorAll("section");
+            sections.forEach(sec => {
+                sec.classList.remove("active");
+            });
+            document.getElementById(id).classList.add("active");
+            
+            // Desplazamiento suave al inicio de la sección
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+    
+</body>
+</html>
