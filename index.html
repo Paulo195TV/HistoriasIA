@@ -518,6 +518,7 @@
     </script>
 
 <script>
+  <script>
     // Cargar comentarios al iniciar
     document.addEventListener("DOMContentLoaded", function () {
         const comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
@@ -542,7 +543,26 @@
         nuevoComentario.style.marginBottom = "15px";
         nuevoComentario.style.borderLeft = "6px solid #4CAF50";
         nuevoComentario.style.borderRadius = "8px";
-        nuevoComentario.innerText = texto;
+
+        const textoComentario = document.createElement("span");
+        textoComentario.innerText = texto;
+
+        const btnEliminar = document.createElement("button");
+        btnEliminar.innerText = "Eliminar";
+        btnEliminar.style.marginLeft = "15px";
+        btnEliminar.style.backgroundColor = "#f44336";
+        btnEliminar.style.color = "white";
+        btnEliminar.style.border = "none";
+        btnEliminar.style.padding = "6px 12px";
+        btnEliminar.style.borderRadius = "6px";
+        btnEliminar.style.cursor = "pointer";
+        btnEliminar.onclick = function () {
+            nuevoComentario.remove();
+            eliminarComentario(texto);
+        };
+
+        nuevoComentario.appendChild(textoComentario);
+        nuevoComentario.appendChild(btnEliminar);
         contenedor.prepend(nuevoComentario);
     }
 
@@ -551,7 +571,12 @@
         comentarios.push(texto);
         localStorage.setItem("comentarios", JSON.stringify(comentarios));
     }
-</script>
 
+    function eliminarComentario(texto) {
+        let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+        comentarios = comentarios.filter(com => com !== texto);
+        localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+</script>
 </body>
 </html>
