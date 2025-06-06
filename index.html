@@ -489,7 +489,9 @@
                     </div>
                 </div>
             </section>
-            <section id="comentarios">
+            
+        
+<section id="comentarios" class="active">
     <h2>💬 Deja tus comentarios o ideas</h2>
     <form onsubmit="enviarComentario(event)">
         <textarea id="comentarioTexto" placeholder="Escribe tu comentario aquí..." rows="5" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 18px;"></textarea>
@@ -514,5 +516,42 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+
+<script>
+    // Cargar comentarios al iniciar
+    document.addEventListener("DOMContentLoaded", function () {
+        const comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
+        comentariosGuardados.forEach(texto => agregarComentario(texto));
+    });
+
+    function enviarComentario(event) {
+        event.preventDefault();
+        const texto = document.getElementById("comentarioTexto").value.trim();
+        if (texto) {
+            agregarComentario(texto);
+            guardarComentario(texto);
+            document.getElementById("comentarioTexto").value = "";
+        }
+    }
+
+    function agregarComentario(texto) {
+        const contenedor = document.getElementById("comentariosGuardados");
+        const nuevoComentario = document.createElement("div");
+        nuevoComentario.style.backgroundColor = "rgba(255,255,255,0.9)";
+        nuevoComentario.style.padding = "15px";
+        nuevoComentario.style.marginBottom = "15px";
+        nuevoComentario.style.borderLeft = "6px solid #4CAF50";
+        nuevoComentario.style.borderRadius = "8px";
+        nuevoComentario.innerText = texto;
+        contenedor.prepend(nuevoComentario);
+    }
+
+    function guardarComentario(texto) {
+        const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+        comentarios.push(texto);
+        localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+</script>
+
 </body>
 </html>
